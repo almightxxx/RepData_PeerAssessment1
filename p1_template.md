@@ -1,5 +1,9 @@
 R Coursera Project
 ===================
+```{r global-options,include=TRUE}
+knitr::opts_chunk$set(echo=TRUE)
+```
+
 
 ASSIGNMENT #
 To begin with the project,first of all download the zipped data and extract it .
@@ -18,9 +22,6 @@ rdata<-subset(data,!is.na(data$steps))
 kith<-with(rdata,tapply(steps,date,sum,na.rm=TRUE))
 hist(x=kith,breaks=20,xlab="total steps",col="pink",main="Distribution of total daily steps")
 ```
-
-![image](https://github.com/almightxxx/RepData_PeerAssessment1/blob/master/plot1.png)
-
 To find the mean and media 
 ```{r}
 mean(kith)
@@ -33,8 +34,6 @@ first determine the mean of steps taken per interval
 avg<-with(rdata,tapply(steps,interval,mean,na.rm=T))
 ```
 plot the graph between intervals and steps taken .
-
-![img](https://github.com/almightxxx/RepData_PeerAssessment1/blob/master/plot2.png)
 
 ```{r}
 num<-as.numeric(names(avg))
@@ -71,7 +70,6 @@ To create a histogram of the new total daily steps taken.
 new<-with(dataf,tapply(steps,date,sum,na.rm=T))
 hist(x=new,breaks=20,col="pink",xlab="steps",main="Distribution of new data")
 ```
-![i](https://github.com/almightxxx/RepData_PeerAssessment1/blob/master/plot3.png)
 
 Finding out mean and median:
 
@@ -99,7 +97,7 @@ xyplot(steps ~ interval | day, stepsByDay, type = "l", layout = c(1, 2),
     xlab = "Interval", ylab = "Number of steps")
 
 ```
-![image](https://github.com/almightxxx/RepData_PeerAssessment1/blob/master/plot4.png)
+
 
 
 
