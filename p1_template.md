@@ -10,7 +10,7 @@ To begin with the project,first of all download the zipped data and extract it .
 Set the folder containing the extracted data as the working file directory.
 Time to load the data into Rstudio.
 ```{r}
-data<-read.csv("activity.csv",na.strings="NA",header=TRUE)
+data<-read.csv("https://github.com/almightxxx/RepData_PeerAssessment1/blob/master/activity.csv",na.strings="NA",header=TRUE)
 ```
 converting the dates in the data to class date.
 ```{r}
